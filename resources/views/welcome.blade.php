@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'MINI INDONESIA')</title>
+    <title>@yield('title', 'SCHOOLPAY')</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -50,7 +50,7 @@
 
       <!-- Tombol Masuk -->
       <div>
-        <button class="border px-4 py-2 rounded-md bg-blue-800 text-white hover:bg-blue-600">
+        <button class="border px-4 py-2 rounded-md bg-blue-800 text-white hover:bg-blue-900">
           Masuk
         </button>
       </div>
@@ -313,6 +313,18 @@
 							<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z" />
 							<path stroke-linecap="round" stroke-linejoin="round" d="M4.867 19.125h.008v.008h-.008v-.008Z" />
 						  </svg>
+
+                          <!-- Arrow Icon -->
+						<svg xmlns="http://www.w3.org/2000/svg"
+							class="h-4 w-4 ml-auto transition-transform transform peer-checked:rotate-180 absolute right-4 top-3 transform #dis--translate-y-1/2 text-white"
+							fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+						</svg>
+					
+						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-1 transition-all duration-300">
+							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Sekolah</a>
+							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Bulan</a>
+						</div>
                     </div>
 
 
@@ -334,7 +346,7 @@
 
 <div class="p-4 sm:ml-64">
    <div class="p-4 rounded-lg mt-14">
-      @include('users')
+      @include('informasi.tambahinfo')
    </div>
 </div>
 
