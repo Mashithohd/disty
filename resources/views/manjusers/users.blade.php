@@ -4,7 +4,7 @@
 </div>
 
 <!--Tabel-->
-<div class="text-white bg-white">
+<div class="bg-white p-4 rounded-lg shadow">
     <div class="p-4 flex flex-col gap-4">
         <!-- Container for Search Input and Add User Button -->
         <div class="flex items-center gap-4 ml-auto mb-4">

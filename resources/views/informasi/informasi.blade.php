@@ -4,7 +4,7 @@
 </div>
 
 <!-- component -->
-<div class="text-white bg-white">
+<div class="bg-white p-4 rounded-lg shadow">
     <div class="p-4 flex">
         <!-- Tombol Add User -->
         <button class="border px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-800 ml-auto">
