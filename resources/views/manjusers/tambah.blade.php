@@ -1,3 +1,23 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Managemet User</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script>
+      function toggleDropdown(id) {
+        document.getElementById(id).classList.toggle("hidden");
+      }
+    </script>
+  </head>
+ 
+     <!--Sidebar&Navbar-->
+  @include('welcome')
+
+<!-- Main Content -->
+<div class="p-4 sm:ml-64">
+<div class="p-4 rounded-lg mt-14">
 <div class="flex items-center justify-between mb-4">
     <!-- Title: User Management -->
     <h2 class="text-2xl font-semibold text-gray-900">Tambah User</h2>
@@ -51,7 +71,10 @@
         </div>
         <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
     </div>
-    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    <a href="users" class="bg-blue-500 text-white px-4 py-2 rounded mr-2 hover:bg-blue-600 text-center block">
+    Simpan
+</a>
+
 </form>
 
     

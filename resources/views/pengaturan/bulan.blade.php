@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
+<body>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!--Sidebar&Navbar-->
+@include('welcome')
+
+<div class="p-4 sm:ml-64">
+   <div class="p-4 rounded-lg mt-14">
 <div class="flex items-center justify-between mb-4">
     <!-- Title: User Management -->
     <h2 class="text-2xl font-semibold text-gray-900">Pengaturan Bulan</h2>

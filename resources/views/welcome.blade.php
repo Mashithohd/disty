@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'SCHOOLPAY')</title>
+    <title>@yield('SCHOOLPAY')</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.2/dist/tailwind.min.css" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -51,7 +51,7 @@
       <!-- Tombol Masuk -->
       <div>
         <button class="border px-4 py-2 rounded-md bg-blue-800 text-white hover:bg-blue-900">
-          Masuk
+          Keluar
         </button>
       </div>
     </div>
@@ -62,24 +62,70 @@
 <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-[#022F6A] border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
    <div class="h-full px-3 pb-4 overflow-y-auto bg-[#022F6A] dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
-         <!-- Profile Section -->
-      <div class="flex items-center space-x-4 mb-5">
-         <img src="{{ asset('images/profil.png') }}" class="w-10 h-10 rounded-full" alt="User Profile">
-         <div class="text-sm text-white dark:text-white">
-            <p class="font-semibold">John Doe</p>
-            <p class="text-green-500 dark:text-green-400">Online</p>
+          <!-- Profile Section -->
+      <div class="bg-gradient-to-br bg-[#022F6A] p-4 rounded-lg shadow-lg relative mb-6">
+         <div class="flex items-center justify-between">
+            <!-- Profile Info -->
+            <div class="flex items-center space-x-4">
+               <!-- Profile Picture with Gradient Border -->
+               <div class="relative w-16 h-16 rounded-full bg-gradient-to-tr from-white to-blue-300 p-1">
+                  <img src="{{ asset('images/profil.png') }}" alt="User Profile" class="w-full h-full rounded-full border-2 border-blue-500">
+               </div>
+               <div class="text-white">
+                  <p class="text-lg font-bold">John Doe</p>
+                  <p class="text-sm text-green-300 flex items-center">
+                     <span class="w-3 h-3 bg-green-400 rounded-full mr-2"></span> Online
+                  </p>
+               </div>
+            </div>
+            <!-- Dropdown Button -->
+            <button data-popover-target="popover-user-profile" type="button" class="p-2 bg-[#022F6A] hover:bg-[#022F6A] rounded-full text-white shadow-lg transition-transform transform hover:scale-110 focus:outline-none">
+               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M5.293 5.293a1 1 0 011.414 0L10 8.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+               </svg>
+            </button>
          </div>
-         <!-- Dropdown Icon -->
-         <button class="p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-400 dark:hover:bg-gray-700 rounded-full">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-               <path fill-rule="evenodd" d="M5.293 5.293a1 1 0 011.414 0L10 8.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-            </svg>
-         </button>
+
+         <!-- Dropdown Menu -->
+         <div data-popover id="popover-user-profile" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-gray-800 dark:border-gray-600">
+            <div class="p-3">
+                <!-- User Info -->
+            <div>
+                <p class="text-sm font-bold text-gray-900">Administrator</p>
+                <p class="text-xs text-gray-500">admin@gmail.com</p>
+            </div>
+        </div>
+
+            <!-- Menu Items -->
+            <ul class="py-2">
+                <li>
+                    <a href="profil" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-100">
+                        <!-- Icon -->
+                        <svg class="w-5 h-5 text-gray-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4.992 4.992 0 017 16c1.038 0 2.015.315 2.827.854l5.364-5.364A4.992 4.992 0 0117 8a5 5 0 00-10 0 4.992 4.992 0 01-.854 2.827l-5.364 5.364A4.992 4.992 0 015 16z"></path>
+                        </svg>
+                        Profil
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="login" class="flex items-center px-4 py-2 text-red-600 hover:bg-gray-100">
+                        <!-- Icon -->
+                        <svg class="w-5 h-5 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                        Keluar
+                    </a>
+                </li>
+            </ul>
+                <div data-popper-arrow></div>
+            </div>
       </div>
       <!--menu sidebar-->
 			<div class="flex flex-col flex-1 overflow-y-auto">
 				<nav class="flex-1 px-2 py-4 bg-[#022F6A]">
-					<a href="#" class="flex items-center px-4 py-2 text-gray-100 hover:bg-gray-700 group">
+					<a href="dashboard" class="flex items-center px-4 py-2 text-blue-100 hover:bg-blue-700 group">
 						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 group-hover:transform group-hover:rotate-90" fill="none" viewBox="0 0 24 24"
 							stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -89,7 +135,7 @@
 					</a>
 
 					<!-- Pembayaran Siswa -->
-					<a href="#" class="flex items-center px-4 py-2 text-gray-100 hover:bg-gray-700 group">
+					<a href="pembayaransiswa" class="flex items-center px-4 py-2 text-blue-100 hover:bg-blue-700 group">
                     <div class="group">
                         <!-- Ikon Pertama: Profil Pengguna Tunggal -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -112,7 +158,7 @@
 						<input type="checkbox" id="keuangan-toggle" class="hidden peer">
 					
 						<label for="keuangan-toggle"
-							class="flex items-center px-12 py-2 mt-2 text-gray-100 hover:bg-gray-700 cursor-pointer w-full">
+							class="flex items-center px-12 py-2 mt-2 text-blue-100 hover:bg-blue-700 cursor-pointer w-full">
                             Keuangan
 						</label>
 					
@@ -123,8 +169,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 10.5h9m-4.5-3v6" />
                         </svg>
-
-
                                         
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                             class="absolute top-2 left-4 text-white hidden group-hover:block peer-checked:block h-6 w-6 mr-2 transition-transform duration-300 ease-in-out hover:scale-110">
@@ -141,12 +185,18 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
 						</svg>
 					
-						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-1 transition-all duration-300">
-							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Keterangan Pembayaran</a>
-							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Pos Keuangan</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Jenis Pembayaran</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Pos Pengeluaran</a>
-						</div>
+						<!-- Dropdown Container -->
+            <div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-2 p-4 rounded-lg shadow-md transition-all duration-300">
+                <!-- Dropdown Item -->
+                <a href="setting_pos_bayar" class="block px-6 py-3 text-gray-700 rounded-md hover:bg-blue-100 hover:text-blue-800 transition-colors">
+                    Pos Keuangan
+                </a>
+                <a href="jenispembayaran" class="block px-6 py-3 text-gray-700 rounded-md hover:bg-blue-100 hover:text-blue-800 transition-colors">
+                    Jenis Pembayaran
+                </a>
+            </div>
+
+
 					</div>
 
                     <!-- Jurnal with subitems -->
@@ -154,7 +204,7 @@
 						<input type="checkbox" id="jurnal-toggle" class="hidden peer">
 					
 						<label for="jurnal-toggle"
-							class="flex items-center px-12 py-2 mt-2 text-gray-100 hover:bg-gray-700 cursor-pointer w-full">
+							class="flex items-center px-12 py-2 mt-2 text-blue-100 hover:bg-blue-700 cursor-pointer w-full">
                             Jurnal Umum
 						</label>
 					
@@ -182,9 +232,16 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
 						</svg>
 					
-						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-1 transition-all duration-300">
-							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Pengeluaran</a>
-						</div>
+						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-2 p-4 rounded-lg shadow-md transition-all duration-300">
+                <!-- Dropdown Item -->
+                <a href="pengeluaran" class="block px-6 py-3 text-gray-700 rounded-md hover:bg-blue-100 hover:text-blue-800 transition-colors">
+                    Pengeluaran
+                </a>
+                <a href="pemasukan" class="block px-6 py-3 text-gray-700 rounded-md hover:bg-blue-100 hover:text-blue-800 transition-colors">
+                    Pemasukan
+                </a>
+            </div>
+
 					</div>
 
                     <!-- Management with subitems -->
@@ -192,7 +249,7 @@
 						<input type="checkbox" id="management-toggle" class="hidden peer">
 					
 						<label for="management-toggle"
-							class="flex items-center px-12 py-2 mt-2 text-gray-100 hover:bg-gray-700 cursor-pointer w-full">
+							class="flex items-center px-12 py-2 mt-2 text-blue-100 hover:bg-blue-700 cursor-pointer w-full">
                             Management Data
 						</label>
 					
@@ -222,16 +279,15 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
 						</svg>
 					
-						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-1 transition-all duration-300">
-							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Tahun Ajaran</a>
-							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Kelas</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Siswa</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Kelulusan</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Kenaikan Kelas</a>
+						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-2 p-4 rounded-lg shadow-md transition-all duration-300">
+                            <a href="tahunajar" class="block px-4 py-2 rounded-md hover:bg-gray-200 transition-colors">Tahun Ajaran</a>
+                            <a href="kelas" class="block px-4 py-2 rounded-md hover:bg-gray-200 transition-colors">Kelas</a>
+                            <a href="siswa" class="block px-4 py-2 rounded-md hover:bg-gray-200 transition-colors">Siswa</a>
+                            <a href="kelulusan" class="block px-4 py-2 rounded-md hover:bg-gray-200 transition-colors">Kelulusan</a>
+                            <a href="kenaikankelas" class="block px-4 py-2 rounded-md hover:bg-gray-200 transition-colors">Kenaikan Kelas</a>
+                        </div>
 
 
-
-						</div>
 					</div>
 					
                     <!--Laporan with subitems -->
@@ -239,7 +295,7 @@
 						<input type="checkbox" id="laporan-toggle" class="hidden peer">
 					
 						<label for="laporan-toggle"
-							class="flex items-center px-12 py-2 mt-2 text-gray-100 hover:bg-gray-700 cursor-pointer w-full">
+							class="flex items-center px-12 py-2 mt-2 text-blue-100 hover:bg-blue-700 cursor-pointer w-full">
                             Laporan
 						</label>
 					
@@ -267,14 +323,19 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
 						</svg>
 					
-						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-1 transition-all duration-300">
-							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Laporan Keuangan</a>
-							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Laporan Arus Kas</a>
-						</div>
+						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-2 p-4 rounded-lg shadow-md transition-all duration-300">
+                            <a href="lapuang" class="block px-6 py-3 text-gray-700 rounded-md hover:bg-blue-200 hover:text-blue-800 transition-colors">
+                                Laporan Keuangan
+                            </a>
+                            <a href="rekap" class="block px-6 py-3 text-gray-700 rounded-md hover:bg-blue-200 hover:text-blue-800 transition-colors">
+                                Rekapitulasi
+                            </a>
+                        </div>
+
 					</div>
 
                     <!-- informasi -->
-					<a href="#" class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700 group">
+					<a href="informasi" class="flex items-center px-4 py-2 mt-2 text-blue-100 hover:bg-blue-700 group">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="h-6 w-6 mr-2 group-hover:hidden transition-transform duration-300 ease-in-out hover:scale-110">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -295,7 +356,7 @@
 						<input type="checkbox" id="settings-toggle" class="hidden peer">
 
 						<label for="settings-toggle"
-							class="flex items-center px-12 py-2 mt-2 text-gray-100 hover:bg-gray-700 cursor-pointer w-full">
+							class="flex items-center px-12 py-2 mt-2 text-blue-100 hover:bg-blue-700 cursor-pointer w-full">
 							Pengaturan
 						</label>
 
@@ -321,15 +382,20 @@
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
 						</svg>
 					
-						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-1 transition-all duration-300">
-							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Sekolah</a>
-							<a href="#" class="block px-4 py-2 hover:bg-gray-200">Bulan</a>
-						</div>
+						<div class="hidden peer-checked:flex flex-col bg-white text-gray-800 mt-2 p-4 rounded-lg shadow-md transition-all duration-300">
+                            <a href="sekolah" class="block px-6 py-3 text-gray-700 rounded-md hover:bg-blue-200 hover:text-blue-800 transition-colors">
+                                .
+                            </a>
+                            <a href="bulan" class="block px-6 py-3 text-gray-700 rounded-md hover:bg-blue-200 hover:text-blue-800 transition-colors">
+                                .
+                            </a>
+                        </div>
+
                     </div>
 
 
                     <!-- User -->
-					<a href="#" class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-gray-700 group">
+					<a href="users" class="flex items-center px-4 py-2 mt-2 text-gray-100 hover:bg-blue-700 group">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
 							stroke="currentColor" class="group-hover:hidden h-6 w-6 mr-2">
 							<path stroke-linecap="round" stroke-linejoin="round"
@@ -344,17 +410,13 @@
 			    </div>    
 </aside>
 
-<div class="p-4 sm:ml-64">
-   <div class="p-4 rounded-lg mt-14">
-      @include('laporan.lapuang')
-   </div>
-</div>
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+<script>
+      function toggleDropdown(id) {
+        document.getElementById(id).classList.toggle("hidden");
+      }
+    </script>
 
-
-
-
-
-
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

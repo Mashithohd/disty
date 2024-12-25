@@ -1,15 +1,33 @@
-<div class="flex items-center gap-4 mb-4">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Informasi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script>
+      function toggleDropdown(id) {
+        document.getElementById(id).classList.toggle("hidden");
+      }
+    </script>
+  </head>
+ 
+     <!--Sidebar&Navbar-->
+  @include('welcome')
+
+<!-- Main Content -->
+<div class="p-4 sm:ml-64">
+<div class="p-4 rounded-lg mt-14">
+<div class="flex items-center justify-between mb-4">
     <!-- Title: User Management -->
-    <h2 class="text-2xl font-semibold text-gray-900">Laporan Keuangan</h2>
+    <h2 class="text-2xl font-semibold text-gray-900">Informasi</h2> 
 </div>
 
 <!-- component -->
 <div class="bg-white p-4 rounded-lg shadow">
     <div class="p-4 flex">
         <!-- Tombol Add User -->
-        <button class="border px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-800 ml-auto">
-            + Tambah
-        </button>
+        <a href="tambahinfo" class="border px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-800 ml-auto">+ Tambah</a>
     </div>
     
     

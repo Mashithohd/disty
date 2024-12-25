@@ -1,4 +1,24 @@
-<div class="flex items-center justify-start mb-4">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Laporan Arus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script>
+      function toggleDropdown(id) {
+        document.getElementById(id).classList.toggle("hidden");
+      }
+    </script>
+  </head>
+ 
+     <!--Sidebar&Navbar-->
+  @include('welcome')
+
+<!-- Main Content -->
+<div class="p-4 sm:ml-64">
+<div class="p-4 rounded-lg mt-14">
+<div class="flex items-center justify-between mb-4">
     <!-- Title -->
     <h2 class="text-2xl font-semibold text-gray-900">Laporan Arus Kas</h2>
 </div>
